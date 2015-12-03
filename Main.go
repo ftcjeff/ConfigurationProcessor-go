@@ -10,7 +10,7 @@ func main() {
 		LogFatal(err.Error())
 	}
 
-	if err := Generator(model); err != nil {
+	if err = Generator(model); err != nil {
 		LogFatal(err.Error())
 	}
 }
