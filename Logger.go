@@ -21,6 +21,10 @@ func Log(s string) {
 	log.Printf("%s - %s\n", MethodInfo(), s)
 }
 
+func LogFatal(s string) {
+	log.Fatalf("%s - %s\n", MethodInfo(), s)
+}
+
 func MethodInfo() string {
 	var method string
 
