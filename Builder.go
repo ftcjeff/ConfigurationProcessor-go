@@ -1,7 +1,7 @@
 package main
 
-func Builder() (Model, error) {
+func Builder(model Model) (Model, error) {
 	defer Trace(Enter())
 
-	return nil, nil
+	return model, nil
 }

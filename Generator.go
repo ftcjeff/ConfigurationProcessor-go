@@ -1,7 +1,7 @@
 package main
 
-func Generator(model Model) error {
+func Generator(model Model) (Model, error) {
 	defer Trace(Enter())
 
-	return nil
+	return model, nil
 }
