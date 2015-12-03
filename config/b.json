@@ -1,0 +1,37 @@
+{
+	"id": "02",
+	"name": "Element B",
+	"type": "control",
+	"product": {
+		"version": {
+			"major": 1,
+			"minor": 0,
+			"patch": 0
+		}
+	},
+
+	"tier": [
+		{
+			"id": "01",
+			"member-count": 5,
+			"type": {
+				"name": "element-tier-type",
+				"version": "001"
+			},
+			"components": [
+				{
+					"name": "BBB-111"
+				},
+				{
+					"name": "AAA-111"
+				},
+				{
+					"name": "BBB-222"
+				},
+				{
+					"name": "BBB-333"
+				}
+			]
+		}
+	]
+}

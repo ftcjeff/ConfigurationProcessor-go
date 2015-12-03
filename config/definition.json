@@ -1,0 +1,44 @@
+{
+	"product": {
+		"version": {
+			"major": 1,
+			"minor": 0,
+			"patch": 0
+		}
+	},
+
+	"config": {
+		"environment": "environment.json",
+		"network": "network.json"
+	},
+
+	"elements": [
+		{
+			"file": "a.json",
+			"properties": [
+				{
+					"name": "Element A Property 1",
+					"value": "one"
+				},
+				{
+					"name": "Element A Property 2",
+					"value": "two"
+				}
+			]
+		},
+		{
+			"file": "b.json",
+			"properties": [
+				{
+					"name": "Element B Property 1",
+					"value": "one"
+				},
+				{
+					"name": "Element B Property 2",
+					"value": "two"
+				}
+			]
+		}
+	]
+}
+

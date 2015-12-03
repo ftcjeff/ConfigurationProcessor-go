@@ -1,0 +1,34 @@
+{
+	"id": "01",
+	"name": "Element A",
+	"type": "control",
+	"product": {
+		"version": {
+			"major": 1,
+			"minor": 0,
+			"patch": 0
+		}
+	},
+
+	"tier": [
+		{
+			"id": "01",
+			"member-count": 3,
+			"type": {
+				"name": "element-tier-type",
+				"version": "001"
+			},
+			"components": [
+				{
+					"name": "AAA-111"
+				},
+				{
+					"name": "AAA-222"
+				},
+				{
+					"name": "AAA-333"
+				}
+			]
+		}
+	]
+}
