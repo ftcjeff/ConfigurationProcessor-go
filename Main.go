@@ -1,20 +1,25 @@
 package main
 
-func main() {
-	defer Trace(Enter())
+import (
+	"github.com/ftcjeff/ConfigurationProcessor/logger"
+	"github.com/ftcjeff/ConfigurationProcessor/types"
+)
 
-	var model Model
+func main() {
+	defer logger.Trace(logger.Enter())
+
+	var model types.Model
 	var err error
 
 	if model, err = Loader(); err != nil {
-		LogFatal(err.Error())
+		logger.LogFatal(err.Error())
 	}
 
 	if model, err = Builder(model); err != nil {
-		LogFatal(err.Error())
+		logger.LogFatal(err.Error())
 	}
 
 	if model, err = Generator(model); err != nil {
-		LogFatal(err.Error())
+		logger.LogFatal(err.Error())
 	}
 }

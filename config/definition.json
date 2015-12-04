@@ -8,13 +8,13 @@
 	},
 
 	"config": {
-		"environment": "environment.json",
-		"network": "network.json"
+		"environment": "config/environment.json",
+		"network": "config/network.json"
 	},
 
 	"elements": [
 		{
-			"file": "a.json",
+			"file": "config/a.json",
 			"properties": [
 				{
 					"name": "Element A Property 1",
@@ -27,7 +27,7 @@
 			]
 		},
 		{
-			"file": "b.json",
+			"file": "config/b.json",
 			"properties": [
 				{
 					"name": "Element B Property 1",

@@ -1,4 +1,4 @@
-package main
+package logger
 
 import (
 	"fmt"
@@ -19,6 +19,10 @@ func Trace(method string) {
 
 func Log(s string) {
 	log.Printf("%s - %s\n", MethodInfo(), s)
+}
+
+func LogMap(m map[string]interface{}) {
+	log.Printf("%s - %v\n", MethodInfo(), m)
 }
 
 func LogFatal(s string) {
