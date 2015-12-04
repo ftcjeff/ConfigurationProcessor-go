@@ -2,6 +2,7 @@ package loaders
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 
 	"github.com/ftcjeff/ConfigurationProcessor/flags"
@@ -9,7 +10,7 @@ import (
 	"github.com/ftcjeff/ConfigurationProcessor/types"
 )
 
-func DefinitionLoader(definitionChannel chan types.Definition) {
+func DefinitionLoader() types.DefinitionType {
 	defer logger.Trace(logger.Enter())
 
 	raw, err := ioutil.ReadFile(flags.FlagInputPath)
@@ -17,12 +18,12 @@ func DefinitionLoader(definitionChannel chan types.Definition) {
 		panic(err)
 	}
 
-	var d types.Definition
+	var d types.DefinitionType
 	err = json.Unmarshal(raw, &d)
 	if err != nil {
 		panic(err)
 	}
-	logger.Log(d.ToString())
+	logger.Log(fmt.Sprintf("%+v", d))
 
-	definitionChannel <- d
+	return d
 }

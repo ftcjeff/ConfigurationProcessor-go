@@ -1,45 +1,45 @@
 package types
 
 type ElementChannel struct {
-	id      int
-	element Model
+	Id      int
+	Element ModelType
 }
 
-type Model struct {
-	definition Definition `json:"definition:`
+type ModelType struct {
+	Definition DefinitionType `json:"definition:`
 }
 
-type Definition struct {
-	product  Product       `json:"product"`
-	config   Configuration `json:"config"`
-	elements Elements      `json:"elements"`
+type DefinitionType struct {
+	Product  ProductType       `json:"product"`
+	Config   ConfigurationType `json:"config"`
+	Elements ElementsType      `json:"elements"`
 }
 
-type Product struct {
-	version Version `json:"version"`
+type ProductType struct {
+	Version VersionType `json:"version"`
 }
 
-type Version struct {
-	major int `json:"major"`
-	minor int `json:"minor"`
-	patch int `json:"patch"`
+type VersionType struct {
+	Major int `json:"major"`
+	Minor int `json:"minor"`
+	Patch int `json:"patch"`
 }
 
-type Configuration struct {
-	environment string `json:"environment"`
-	network     string `json:"network"`
+type ConfigurationType struct {
+	Environment string `json:"environment"`
+	Network     string `json:"network"`
 }
 
-type Property struct {
-	name  string `json:"name"`
-	value string `json:"value"`
+type PropertyType struct {
+	Name  string `json:"name"`
+	Value string `json:"value"`
 }
 
-type Properties []Property
+type PropertiesType []PropertyType
 
-type Element struct {
-	file       string     `json:"file"`
-	properties Properties `json:"properties"`
+type ElementType struct {
+	File       string         `json:"file"`
+	Properties PropertiesType `json:"properties"`
 }
 
-type Elements []Element
+type ElementsType []ElementType

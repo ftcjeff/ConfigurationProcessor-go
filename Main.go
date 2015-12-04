@@ -8,7 +8,7 @@ import (
 func main() {
 	defer logger.Trace(logger.Enter())
 
-	var model types.Model
+	var model types.ModelType
 	var err error
 
 	if model, err = Loader(); err != nil {

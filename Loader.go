@@ -1,29 +1,29 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/ftcjeff/ConfigurationProcessor/loaders"
 	"github.com/ftcjeff/ConfigurationProcessor/logger"
 	"github.com/ftcjeff/ConfigurationProcessor/types"
 )
 
-func Loader() (types.Model, error) {
+func Loader() (types.ModelType, error) {
 	defer logger.Trace(logger.Enter())
 
-	var model types.Model
+	var model types.ModelType
 
-	definitionChannel := make(chan types.Definition)
-	go loaders.DefinitionLoader(definitionChannel)
-	definition := <-definitionChannel
-	model.SetDefinition(definition)
+	definition := loaders.DefinitionLoader()
+	model.Definition = definition
 
-	logger.Log(model.ToString())
+	logger.Log(fmt.Sprintf("%+v", model))
 
 	model = loadAllElements(model)
 
 	return model, nil
 }
 
-func loadAllElements(model types.Model) types.Model {
+func loadAllElements(model types.ModelType) types.ModelType {
 	defer logger.Trace(logger.Enter())
 
 	/*

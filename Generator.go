@@ -5,7 +5,7 @@ import (
 	"github.com/ftcjeff/ConfigurationProcessor/types"
 )
 
-func Generator(model types.Model) (types.Model, error) {
+func Generator(model types.ModelType) (types.ModelType, error) {
 	defer logger.Trace(logger.Enter())
 
 	return model, nil
