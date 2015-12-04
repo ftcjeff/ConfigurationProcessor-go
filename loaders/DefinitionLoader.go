@@ -2,7 +2,6 @@ package loaders
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 
 	"github.com/ftcjeff/ConfigurationProcessor/flags"
@@ -23,7 +22,6 @@ func DefinitionLoader() types.DefinitionType {
 	if err != nil {
 		panic(err)
 	}
-	logger.Log(fmt.Sprintf("%+v", d))
 
 	return d
 }

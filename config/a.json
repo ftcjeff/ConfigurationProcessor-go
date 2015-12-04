@@ -1,5 +1,5 @@
 {
-	"id": "01",
+	"id": 1,
 	"name": "Element A",
 	"type": "control",
 	"product": {
@@ -10,24 +10,18 @@
 		}
 	},
 
-	"tier": [
+	"tiers": [
 		{
-			"id": "01",
+			"id": 1,
 			"member-count": 3,
-			"type": {
+			"node": {
 				"name": "element-tier-type",
-				"version": "001"
+				"version": 1
 			},
 			"components": [
-				{
-					"name": "AAA-111"
-				},
-				{
-					"name": "AAA-222"
-				},
-				{
-					"name": "AAA-333"
-				}
+				"AAA-111",
+				"AAA-222",
+				"AAA-333"
 			]
 		}
 	]

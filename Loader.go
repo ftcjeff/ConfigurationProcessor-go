@@ -16,9 +16,9 @@ func Loader() (types.ModelType, error) {
 	definition := loaders.DefinitionLoader()
 	model.Definition = definition
 
-	logger.Log(fmt.Sprintf("%+v", model))
-
 	model = loadAllElements(model)
+
+	logger.Log(fmt.Sprintf("%+v", model))
 
 	return model, nil
 }
@@ -26,14 +26,21 @@ func Loader() (types.ModelType, error) {
 func loadAllElements(model types.ModelType) types.ModelType {
 	defer logger.Trace(logger.Enter())
 
-	/*
+	definition := model.Definition
+	elements := definition.Elements
 
-		definition := model.Definition()
-		elements := definition.Elements()
+	elementChannel := make(chan types.ElementChannel, len(elements))
 
-		elementChannel := make(chan types.ElementChannel, len(elements))
+	for k, v := range elements {
+		go loaders.ElementLoader(k, v.File, elementChannel)
+	}
 
-	*/
+	for i := 0; i < len(elements); i++ {
+		elem := <-elementChannel
+
+		idx := elem.Id
+		elements[idx].Data = elem.Element
+	}
 
 	return model
 }
