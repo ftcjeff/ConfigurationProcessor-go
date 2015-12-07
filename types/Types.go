@@ -7,12 +7,13 @@ type ElementChannel struct {
 
 type ModelType struct {
 	Definition DefinitionType `json:"definition:`
+	Models     ModelsType     `json:"models,omitempty"`
 }
 
 type DefinitionType struct {
 	Product  ProductType       `json:"product"`
 	Config   ConfigurationType `json:"config"`
-	Elements ElementsType      `json:"elements"`
+	Elements ElementsType      `json:"elements,omitempty"`
 }
 
 type ProductType struct {
@@ -65,4 +66,22 @@ type TiersType []TierType
 type NodeType struct {
 	Name    string `json:"name"`
 	Version int    `json:"version"`
+}
+
+type ModelsType struct {
+	ModelA ModelAType `json:"model-a"`
+	ModelB ModelBType `json:"model-b"`
+	ModelC ModelCType `json:"model-c"`
+}
+
+type ModelAType struct {
+	FileNames []string `json:"filenames"`
+}
+
+type ModelBType struct {
+	Components []string `json:"components"`
+}
+
+type ModelCType struct {
+	NodeNames []string `json:"node-names"`
 }

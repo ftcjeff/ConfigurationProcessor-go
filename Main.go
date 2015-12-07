@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/ftcjeff/ConfigurationProcessor/logger"
 	"github.com/ftcjeff/ConfigurationProcessor/types"
 )
@@ -15,11 +17,13 @@ func main() {
 		logger.LogFatal(err.Error())
 	}
 
+	if model, err = Generator(model); err != nil {
+		logger.LogFatal(err.Error())
+	}
+
 	if model, err = Builder(model); err != nil {
 		logger.LogFatal(err.Error())
 	}
 
-	if model, err = Generator(model); err != nil {
-		logger.LogFatal(err.Error())
-	}
+	logger.Log(fmt.Sprintf("%+v", model))
 }

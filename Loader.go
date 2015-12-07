@@ -1,11 +1,10 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/ftcjeff/ConfigurationProcessor/loaders"
 	"github.com/ftcjeff/ConfigurationProcessor/logger"
 	"github.com/ftcjeff/ConfigurationProcessor/types"
+
+	"github.com/ftcjeff/ConfigurationProcessor/loaders"
 )
 
 func Loader() (types.ModelType, error) {
@@ -17,8 +16,6 @@ func Loader() (types.ModelType, error) {
 	model.Definition = definition
 
 	model = loadAllElements(model)
-
-	logger.Log(fmt.Sprintf("%+v", model))
 
 	return model, nil
 }

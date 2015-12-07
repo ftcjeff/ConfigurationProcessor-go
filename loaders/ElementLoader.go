@@ -2,7 +2,6 @@ package loaders
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 
 	"github.com/ftcjeff/ConfigurationProcessor/logger"
@@ -22,7 +21,6 @@ func ElementLoader(id int, fileName string, channel chan types.ElementChannel) {
 	if err != nil {
 		panic(err)
 	}
-	logger.Log(fmt.Sprintf("%+v", e))
 
 	var ec types.ElementChannel
 	ec.Id = id
