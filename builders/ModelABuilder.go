@@ -15,12 +15,15 @@ func ModelABuilder(model types.ModelType, wg sync.WaitGroup) {
 	modelA := model.Models.ModelA
 
 	fileName := flags.FlagOutputPath + "/" + "ModelA.txt"
-	fp, _ := os.Create(fileName)
-	defer fp.Close()
+	if fp, err := os.Create(fileName); err != nil {
+		panic(err)
+	} else {
+		defer fp.Close()
 
-	for _, a := range modelA.FileNames {
-		fp.WriteString(a + "\n")
+		for _, a := range modelA.FileNames {
+			fp.WriteString(a + "\n")
+		}
+
+		logger.Log("Created file: " + fileName)
 	}
-
-	logger.Log("Created file: " + fileName)
 }

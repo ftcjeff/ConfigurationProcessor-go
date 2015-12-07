@@ -16,14 +16,17 @@ func ModelBBuilder(model types.ModelType, wg sync.WaitGroup) {
 	modelB := model.Models.ModelB
 
 	fileName := flags.FlagOutputPath + "/" + "ModelB.txt"
-	fp, _ := os.Create(fileName)
-	defer fp.Close()
+	if fp, err := os.Create(fileName); err != nil {
+		panic(err)
+	} else {
+		defer fp.Close()
 
-	sort.Strings(modelB.Components)
+		sort.Strings(modelB.Components)
 
-	for _, b := range modelB.Components {
-		fp.WriteString(b + "\n")
+		for _, b := range modelB.Components {
+			fp.WriteString(b + "\n")
+		}
+
+		logger.Log("Created file: " + fileName)
 	}
-
-	logger.Log("Created file: " + fileName)
 }

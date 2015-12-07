@@ -16,18 +16,21 @@ func ModelCBuilder(model types.ModelType, wg sync.WaitGroup) {
 	modelC := model.Models.ModelC
 
 	fileName := flags.FlagOutputPath + "/" + "ModelC.txt"
-	fp, _ := os.Create(fileName)
-	defer fp.Close()
+	if fp, err := os.Create(fileName); err != nil {
+		panic(err)
+	} else {
+		defer fp.Close()
 
-	sort.Strings(modelC.NodeNames)
-	lastName := ""
+		sort.Strings(modelC.NodeNames)
+		lastName := ""
 
-	for _, c := range modelC.NodeNames {
-		if c != lastName {
-			fp.WriteString(c + "\n")
-			lastName = c
+		for _, c := range modelC.NodeNames {
+			if c != lastName {
+				fp.WriteString(c + "\n")
+				lastName = c
+			}
 		}
-	}
 
-	logger.Log("Created file: " + fileName)
+		logger.Log("Created file: " + fileName)
+	}
 }
