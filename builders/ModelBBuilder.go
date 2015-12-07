@@ -13,6 +13,8 @@ import (
 func ModelBBuilder(model types.ModelType, wg sync.WaitGroup) {
 	defer logger.Trace(logger.Enter())
 
+	wg.Add(1)
+
 	modelB := model.Models.ModelB
 
 	fileName := flags.FlagOutputPath + "/" + "ModelB.txt"

@@ -14,6 +14,7 @@ func Builder(model types.ModelType) (types.ModelType, error) {
 
 	var wg sync.WaitGroup
 
+	builders.ModelBuilder(model, wg)
 	builders.ModelABuilder(model, wg)
 	builders.ModelBBuilder(model, wg)
 	builders.ModelCBuilder(model, wg)
