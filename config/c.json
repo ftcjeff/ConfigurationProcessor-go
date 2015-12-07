@@ -1,0 +1,28 @@
+{
+	"id": 1,
+	"name": "Element C",
+	"type": "control",
+	"product": {
+		"version": {
+			"major": 1,
+			"minor": 0,
+			"patch": 0
+		}
+	},
+
+	"tiers": [
+		{
+			"id": 1,
+			"member-count": 2,
+			"node": {
+				"name": "element-tier-type",
+				"version": 1
+			},
+			"components": [
+				"CCC-111",
+				"CCC-222",
+				"CCC-333"
+			]
+		}
+	]
+}

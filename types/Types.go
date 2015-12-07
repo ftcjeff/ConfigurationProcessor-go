@@ -50,7 +50,7 @@ type ElementDataType struct {
 	Name    string      `json:"name"`
 	Type    string      `json:"type"`
 	Product ProductType `json:"product"`
-	Tiers   TiersType   `json:"tier"`
+	Tiers   TiersType   `json:"tiers"`
 }
 
 type TierType struct {

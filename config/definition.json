@@ -38,6 +38,32 @@
 					"value": "two"
 				}
 			]
+		},
+		{
+			"file": "config/c.json",
+			"properties": [
+				{
+					"name": "Element C Property 1",
+					"value": "one"
+				},
+				{
+					"name": "Element C Property 2",
+					"value": "two"
+				}
+			]
+		},
+		{
+			"file": "config/d.json",
+			"properties": [
+				{
+					"name": "Element D Property 1",
+					"value": "one"
+				},
+				{
+					"name": "Element D Property 2",
+					"value": "two"
+				}
+			]
 		}
 	]
 }

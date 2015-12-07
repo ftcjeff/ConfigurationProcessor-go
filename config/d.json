@@ -1,0 +1,28 @@
+{
+	"id": 1,
+	"name": "Element D",
+	"type": "control",
+	"product": {
+		"version": {
+			"major": 1,
+			"minor": 0,
+			"patch": 0
+		}
+	},
+
+	"tiers": [
+		{
+			"id": 1,
+			"member-count": 9,
+			"node": {
+				"name": "element-tier-type",
+				"version": 1
+			},
+			"components": [
+				"DDD-111",
+				"DDD-222",
+				"DDD-333"
+			]
+		}
+	]
+}
