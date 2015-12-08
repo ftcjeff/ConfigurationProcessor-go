@@ -8,13 +8,13 @@
 	},
 
 	"config": {
-		"environment": "config/environment.json",
-		"network": "config/network.json"
+		"environment": "/opt/ConfigurationProcessor/config/environment.json",
+		"network": "/opt/ConfigurationProcessor/config/network.json"
 	},
 
 	"elements": [
 		{
-			"file": "config/a.json",
+			"file": "/opt/ConfigurationProcessor/config/a.json",
 			"properties": [
 				{
 					"name": "Element A Property 1",
@@ -27,7 +27,7 @@
 			]
 		},
 		{
-			"file": "config/b.json",
+			"file": "/opt/ConfigurationProcessor/config/b.json",
 			"properties": [
 				{
 					"name": "Element B Property 1",
@@ -40,7 +40,7 @@
 			]
 		},
 		{
-			"file": "config/c.json",
+			"file": "/opt/ConfigurationProcessor/config/c.json",
 			"properties": [
 				{
 					"name": "Element C Property 1",
@@ -53,7 +53,7 @@
 			]
 		},
 		{
-			"file": "config/d.json",
+			"file": "/opt/ConfigurationProcessor/config/d.json",
 			"properties": [
 				{
 					"name": "Element D Property 1",

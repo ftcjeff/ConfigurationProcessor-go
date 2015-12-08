@@ -11,3 +11,4 @@ done
 
 echo "Building ConfigurationProcessor"
 go build
+go install
