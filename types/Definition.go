@@ -14,6 +14,7 @@ type DefinitionType struct {
 	Product  ProductType       `json:"product"`
 	Config   ConfigurationType `json:"config"`
 	Elements ElementsType      `json:"elements,omitempty"`
+	Networks NetworkType       `json:"networks,omitempty"`
 }
 
 type ProductType struct {
@@ -58,6 +59,7 @@ type TierType struct {
 	Id          int      `json:"id"`
 	MemberCount int      `json:"member-count"`
 	Node        NodeType `json:"node"`
+	NetworkName string   `json:"network-name,omitempty"`
 	Components  []string `json:"components"`
 }
 
@@ -72,6 +74,8 @@ type ModelsType struct {
 	ModelA ModelAType `json:"model-a"`
 	ModelB ModelBType `json:"model-b"`
 	ModelC ModelCType `json:"model-c"`
+
+	Servers []ServerType `json:"servers,omitempty"`
 }
 
 type ModelAType struct {

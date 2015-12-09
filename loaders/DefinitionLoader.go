@@ -23,5 +23,17 @@ func DefinitionLoader() types.DefinitionType {
 		panic(err)
 	}
 
+	networkFileName := d.Config.Network
+	raw, err = ioutil.ReadFile(networkFileName)
+	if err != nil {
+		panic(err)
+	}
+
+	var nets types.NetworkType
+	err = json.Unmarshal(raw, &nets)
+	if err != nil {
+		panic(err)
+	}
+
 	return d
 }

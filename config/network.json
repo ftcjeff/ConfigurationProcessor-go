@@ -1,0 +1,21 @@
+{
+	"product": {
+		"version": {
+			"major": 1,
+			"minor": 0,
+			"patch": 0
+		}
+	},
+
+	"segments": [
+		{
+			"name": "internal",
+			"cidr": "192.168.124.1/24",
+			"start-address": "192.168.124.100"
+		},
+		{
+			"name": "external",
+			"cidr": "16.200.125.1/24"
+		}
+	]
+}
