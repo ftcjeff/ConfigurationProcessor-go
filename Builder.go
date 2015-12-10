@@ -18,6 +18,7 @@ func Builder(model types.ModelType) (types.ModelType, error) {
 	builders.ModelABuilder(model, wg)
 	builders.ModelBBuilder(model, wg)
 	builders.ModelCBuilder(model, wg)
+	builders.HostsBuilder(model, wg)
 
 	wg.Wait()
 
