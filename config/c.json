@@ -14,6 +14,7 @@
 		{
 			"id": 1,
 			"member-count": 2,
+			"network-name": "external",
 			"node": {
 				"name": "element-tier-type",
 				"version": 1
