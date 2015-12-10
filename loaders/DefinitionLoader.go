@@ -29,11 +29,13 @@ func DefinitionLoader() types.DefinitionType {
 		panic(err)
 	}
 
-	var nets types.NetworkType
-	err = json.Unmarshal(raw, &nets)
+	var topology types.TopologyType
+	err = json.Unmarshal(raw, &topology)
 	if err != nil {
 		panic(err)
 	}
+
+	d.Topology = topology
 
 	return d
 }

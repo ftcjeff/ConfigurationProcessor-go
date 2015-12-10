@@ -1,10 +1,12 @@
 package generators
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 
 	"github.com/ftcjeff/ConfigurationProcessor/logger"
+	"github.com/ftcjeff/ConfigurationProcessor/segment"
 	"github.com/ftcjeff/ConfigurationProcessor/types"
 )
 
@@ -22,9 +24,17 @@ func ServerGenerator(model types.ModelType, channel chan []types.ServerType) {
 
 			for i := 0; i < tier.MemberCount; i++ {
 				var server types.ServerType
+				var err error
 
 				server.Tier = tierName
 				server.Hostname = genHostname(tierName, i)
+				server.NetworkInfo, err = segment.GetNetworkInfo(model, tier.NetworkName)
+
+				logger.Log(fmt.Sprintf("%+v", server.NetworkInfo))
+
+				if err != nil {
+					panic(err)
+				}
 
 				servers = append(servers, server)
 			}

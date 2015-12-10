@@ -14,7 +14,7 @@ type DefinitionType struct {
 	Product  ProductType       `json:"product"`
 	Config   ConfigurationType `json:"config"`
 	Elements ElementsType      `json:"elements,omitempty"`
-	Networks NetworkType       `json:"networks,omitempty"`
+	Topology TopologyType      `json:"topology,omitempty"`
 }
 
 type ProductType struct {

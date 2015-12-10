@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dirs="types logger flags loaders generators builders"
+dirs="types logger flags loaders segment generators builders"
 for d in $dirs; do
   cd $d > /dev/null 2>&1
   echo "Building $d"

@@ -1,15 +1,16 @@
 package types
 
-import (
-	"net"
-)
-
 type NetworkChannel struct {
 	Id          int
 	NetworkInfo NetworkInfoType
 }
 
-type NetworkType struct {
+type TopologyType struct {
+	Product         ProductType  `json:"product"`
+	NetworkSegments SegmentsType `json:"segments"`
+}
+
+type SegmentType struct {
 	Name         string `json:"name:`
 	Cidr         string `json:"cidr"`
 	Netmask      string `json:"netmask,omitempty"`
@@ -19,12 +20,14 @@ type NetworkType struct {
 	NetworkInfo NetworkInfoType `json:"network-info,omitempty"`
 }
 
+type SegmentsType []SegmentType
+
 type NetworkInfoType struct {
 	NextIndex int `json:"next-index"`
 }
 
 type IpAddressDetailsType struct {
-	IpAddress net.IP     `json:"ip-address,omitempty"`
-	Netmask   net.IPMask `json:"netmask,omitempty"`
-	Gateway   net.IP     `json:"gateway,omitempty"`
+	IpAddress string `json:"ip-address,omitempty"`
+	Netmask   string `json:"netmask,omitempty"`
+	Gateway   string `json:"gateway,omitempty"`
 }
